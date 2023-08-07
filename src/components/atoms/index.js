@@ -1,4 +1,4 @@
-import Button from './Button/Button';
+import Button from './Buttons/Button';
 import Input from './Input/Input';
 import Avatar from './Avatar/Avatar';
 

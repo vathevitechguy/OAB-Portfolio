@@ -1,0 +1,22 @@
+@import './src/scss/lib.scss';
+.dark-btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: 0;
+  border-radius: 8px;
+  background: $background-dark;
+  width: auto;
+  max-width: 200px;
+  padding: 15px 25.14px 13px 25px;
+  color: $text-light;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #1a1b1f;
+    transition: background-color 775ms, opacity 0.4s, color 0.4s;
+  }
+}
