@@ -53,7 +53,10 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $bm-md) {
+  .navbar {
+    padding: 20px 30px;
+  }
   .nav-items {
     display: flex;
     flex-direction: column;
