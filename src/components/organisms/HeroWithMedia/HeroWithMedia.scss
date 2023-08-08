@@ -43,4 +43,34 @@
       width: 35%;
     }
   }
+  @media (max-width: 768px) {
+    padding: 0;
+    &_wrapper {
+      flex-direction: column; /* Stack columns in smaller screens */
+      padding: 30px; /* Adjust padding */
+
+      &--col1 {
+        width: 100%; /* Full width for smaller screens */
+        padding-right: 0; /* Remove padding between columns */
+
+        & h1 {
+          margin-top: 40px; /* Reduce top margin */
+          font-size: 28px; /* Further decrease font size */
+        }
+
+        & p,
+        a {
+          font-size: 16px; /* Adjust font size */
+        }
+
+        .buttons {
+          justify-content: center; /* Center buttons */
+        }
+      }
+
+      &--col2 {
+        width: 100%; /* Full width for smaller screens */
+      }
+    }
+  }
 }
