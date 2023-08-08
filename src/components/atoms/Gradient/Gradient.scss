@@ -1,0 +1,34 @@
+.background-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+
+  .background-image {
+    display: flex;
+    position: absolute;
+    top: var(--offset-y, 0);
+    left: var(--offset-x, 0);
+    // right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/gradient.png');
+    background-position: center;
+    animation: rotateImage 40s infinite reverse;
+    transform: rotate(var(--rotation, 0deg));
+    transition: transform 0.3s;
+
+    &:hover {
+      animation-play-state: running;
+    }
+  }
+
+  @keyframes rotateImage {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

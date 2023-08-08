@@ -1,5 +1,5 @@
-import Button from './Buttons/Button';
 import Input from './Input/Input';
 import Avatar from './Avatar/Avatar';
+import Gradient from './Gradient/Gradient';
 
-export { Button, Input, Avatar };
+export { Input, Avatar, Gradient };

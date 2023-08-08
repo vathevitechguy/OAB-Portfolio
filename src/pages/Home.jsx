@@ -1,11 +1,10 @@
 import React from 'react';
+import { HeroWithMedia } from '../components/organisms';
 
 const Home = () => {
   return (
-    <div>
-      Home<div>Home</div>
-      <div>Home</div>
-      <div>Home</div>
+    <div className="Home">
+      <HeroWithMedia />
     </div>
   );
 };

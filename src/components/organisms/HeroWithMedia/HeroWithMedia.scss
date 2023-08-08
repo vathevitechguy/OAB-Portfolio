@@ -1,0 +1,46 @@
+@import '../../../scss/lib.scss';
+.HeroWithMedia {
+  padding: 30px;
+
+  &_wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 50px 90px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    text-align: left;
+
+    &--col1 {
+      width: 65%;
+
+      & h1 {
+        margin-top: 135px;
+      }
+      & p,
+      a {
+        width: 85%;
+        font-size: 26px;
+        line-height: 46px;
+        font-weight: 400;
+        color: $text-light-gray;
+        margin: 5px 0 20px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        img {
+          width: 70px;
+          height: 70px;
+          transform: translateY(5px);
+        }
+      }
+    }
+
+    &--col2 {
+      width: 35%;
+    }
+  }
+}
