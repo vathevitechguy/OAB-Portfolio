@@ -13,7 +13,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="logo">OAB</div>
+        <div className="logo">
+          <NavLink to="/">OAB</NavLink>
+        </div>
         <div className={`nav-items ${menuOpen ? 'active' : ''}`}>
           <NavLink to="/">Home</NavLink>
           <NavLink to="personal-blog">Blog</NavLink>

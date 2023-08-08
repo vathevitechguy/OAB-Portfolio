@@ -11,7 +11,8 @@
     justify-content: space-between;
     align-items: center;
 
-    .logo {
+    .logo a {
+      color: $text-dark;
       font-size: 24px;
       font-weight: 500;
       line-height: 28px;
