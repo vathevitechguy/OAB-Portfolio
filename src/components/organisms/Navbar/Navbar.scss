@@ -56,7 +56,8 @@
 
 @media (max-width: $bm-md) {
   .navbar {
-    padding: 20px 30px;
+    padding: 20px 20px;
+    background-color: transparent !important;
   }
   .nav-items {
     display: flex;
@@ -66,14 +67,16 @@
     position: absolute;
     right: 0;
     width: 100% !important;
-    background-color: rgba(238, 239, 241, 0.9);
+    background-color: #fff;
     transform: translateY(-100%);
     transition: transform 400ms ease 0s;
     pointer-events: none;
+    z-index: 10;
 
     a:not(:nth-child(4)) {
       padding: 15px 30px;
       width: 100%;
+      font-size: inherit;
       opacity: 1;
       transition: background-color 0.4s, opacity 0.4s, color 0.4s;
       &:hover {
@@ -81,7 +84,7 @@
       }
     }
     a:last-child {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
     &.active {
       top: 60px;

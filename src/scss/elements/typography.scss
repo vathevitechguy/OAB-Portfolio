@@ -13,8 +13,8 @@ h1 {
   }
 
   @media screen and (max-width: $bm-md) {
-    font-size: 64px;
-    line-height: 80px;
+    font-size: 50px;
+    line-height: 60px;
   }
 }
 
@@ -124,8 +124,8 @@ p {
   }
 
   @media screen and (max-width: $bm-md) {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 20px !important;
+    line-height: 30px !important;
   }
 }
 

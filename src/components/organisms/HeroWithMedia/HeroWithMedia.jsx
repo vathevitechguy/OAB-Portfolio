@@ -21,12 +21,12 @@ const HeroWithMedia = () => {
             </p>
             <div className="buttons">
               <DarkBtn>Contact Me</DarkBtn>
-              <div>
+              <div className="socials">
                 <Link to="#">
-                  <img src={Linkedin} />
+                  <img src={Linkedin} alt="Linkedin" />
                 </Link>
                 <Link to="#">
-                  <img src={Email} />
+                  <img src={Email} alt="Email" />
                 </Link>
               </div>
             </div>
