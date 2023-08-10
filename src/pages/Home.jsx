@@ -1,7 +1,11 @@
 import React from 'react';
 import './Home.scss';
-import { Expertise, HeroWithMedia } from '../components/organisms';
-import MyWork from '../components/organisms/MyWork/MyWork';
+import {
+  Expertise,
+  HeroWithMedia,
+  MyWork,
+  Resume,
+} from '../components/organisms';
 
 const Home = () => {
   return (
@@ -20,6 +24,7 @@ const Home = () => {
       </div>
       <Expertise />
       <MyWork />
+      <Resume />
     </div>
   );
 };

@@ -1,0 +1,9 @@
+@import '../../../scss/lib.scss';
+.Resume {
+  &_wrapper {
+    @include card;
+    background-color: $background-dark-gray;
+    padding-left: 20px;
+    padding-right: 60px;
+  }
+}
