@@ -1,11 +1,11 @@
 @import '../../../scss/lib.scss';
 .HeroWithMedia {
-  padding: 30px;
+  margin-top: 33px;
 
   &_wrapper {
     position: relative;
     z-index: 2;
-    padding: 50px 90px;
+    padding: 50px 10px;
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -22,7 +22,7 @@
         width: 85%;
         font-size: 26px;
         line-height: 46px;
-        font-weight: 400;
+        font-weight: 300;
         color: $text-light-gray;
         margin: 5px 0 20px;
       }
@@ -45,13 +45,22 @@
 
     &--col2 {
       width: 35%;
+      align-items: left;
+      @media (max-width: $bm-xl) {
+        width: 50%;
+        // img {
+        //   object-fit: cover;
+        // }
+      }
     }
   }
   @media (max-width: 768px) {
     padding: 0;
     &_wrapper {
       flex-direction: column;
-      padding: 20px;
+      // padding: 20px;
+      padding-right: 18px;
+      padding-left: 18px;
 
       &--col1 {
         width: 100%;
@@ -76,7 +85,6 @@
           justify-content: left;
           &:nth-child(2) > img {
             margin-left: -5px;
-            background-color: red !important;
           }
           // .socials {
           //   padding: 0;
