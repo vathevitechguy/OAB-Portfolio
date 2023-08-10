@@ -31,7 +31,7 @@ h2 {
   }
 
   @media screen and (max-width: $bm-md) {
-    font-size: 48px;
+    font-size: 48px !important;
     line-height: 60px;
   }
 }
@@ -40,15 +40,16 @@ h3 {
   @include headings;
   font-size: 70px;
   line-height: 100px;
+  font-weight: 300;
   font-style: normal;
 
   @media screen and (max-width: $bm-xl) {
-    font-size: 56px;
+    font-size: 56px !important;
     line-height: 80px;
   }
 
   @media screen and (max-width: $bm-md) {
-    font-size: 40px;
+    font-size: 30px !important;
     line-height: 60px;
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.scss';
-import { HeroWithMedia } from '../components/organisms';
+import { Expertise, HeroWithMedia } from '../components/organisms';
 
 const Home = () => {
   return (
@@ -17,6 +17,7 @@ const Home = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
+      <Expertise />
     </div>
   );
 };
