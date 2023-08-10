@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.scss';
 import { Expertise, HeroWithMedia } from '../components/organisms';
+import MyWork from '../components/organisms/MyWork/MyWork';
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
         </p>
       </div>
       <Expertise />
+      <MyWork />
     </div>
   );
 };
