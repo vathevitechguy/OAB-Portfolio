@@ -16,7 +16,8 @@
   }
 
   @media (max-width: $bm-md) {
-    margin: 0px 18px 130px 18px !important;
+    margin: 0px 18px 130px 18px;
+    border-radius: 0;
 
     &_wrapper {
       margin: 40px 30px;
