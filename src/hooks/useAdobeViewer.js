@@ -143,7 +143,7 @@ class useAdobeViewer {
   previewFile(divId, viewerConfig) {
     const config = {
       /* Pass your registered client id */
-      clientId: '8c0cd670273d451cbc9b351b11d22318',
+      clientId: '8d233d284b0a4806af69008057049d51',
     };
     if (divId) {
       /* Optional only for Light Box embed mode */

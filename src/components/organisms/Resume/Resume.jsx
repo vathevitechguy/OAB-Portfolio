@@ -14,7 +14,7 @@ const Resume = () => {
           height="480"
           allow="autoplay"
         ></iframe> */}
-        {AdobeInline}
+        <AdobeInline />
       </div>
     </div>
   );
