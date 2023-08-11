@@ -1,9 +1,61 @@
 @import '../../../scss/lib.scss';
 .Resume {
+  margin-bottom: 280px;
+  text-align: left;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  p {
+    font-size: 20px;
+  }
   &_wrapper {
     @include card;
+    margin-top: 80px;
+    padding-bottom: 0;
     background-color: $background-dark-gray;
-    padding-left: 20px;
-    padding-right: 60px;
+    padding-left: 120px;
+    padding-right: 120px;
+    overflow: visible;
+    .resumePdf {
+      max-height: 600px !important;
+      height: auto;
+      overflow: auto;
+      scroll-behavior: auto;
+      margin-top: -42px;
+    }
+  }
+  .icons {
+    width: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    align-self: flex-end;
+    right: 40px;
+    bottom: 10px;
+    img {
+      margin-bottom: 40px;
+      cursor: pointer;
+    }
+  }
+  @media (max-width: $bm-md) {
+    margin: 0px 18px 130px 18px;
+    &_wrapper {
+      padding: 0 15px 0 15px;
+      border-radius: 20px;
+      .resumePdf {
+        max-height: 450px !important;
+      }
+    }
+    .icons {
+      width: fit-content;
+      right: auto;
+
+      img {
+        margin-bottom: 20px;
+        max-width: 30px;
+        width: 100%;
+      }
+    }
   }
 }

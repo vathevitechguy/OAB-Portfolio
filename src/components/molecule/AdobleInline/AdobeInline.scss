@@ -1,11 +1,7 @@
 .in-line-div {
   display: inline-block;
-  margin: 10% 0 10% 0;
-  //   width: 800px;
-  height: 500px !important;
+  height: auto;
   box-shadow: 1px 1px 10px 1px #dadada;
-}
-
-.in-line-container {
-  text-align: center;
+  overflow: visible;
+  z-index: 40;
 }

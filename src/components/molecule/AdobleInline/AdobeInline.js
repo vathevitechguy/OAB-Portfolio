@@ -2,21 +2,17 @@ import React, { useEffect } from 'react';
 import './AdobeInline.scss';
 import useAdobeSDK from '../../../hooks/useAdobeSDK';
 
-const AdobeInline = () => {
+const AdobeInline = (props) => {
   useEffect(() => {
     const viewSDKClient = new useAdobeSDK();
     viewSDKClient.ready().then(() => {
       viewSDKClient.previewFile('pdf-div', {
-        embedMode: 'IN_LINE',
+        embedMode: props.mode,
       });
     });
   }, []);
 
-  return (
-    <div className="in-line-container">
-      <div id="pdf-div" className="in-line-div" />
-    </div>
-  );
+  return <div id="pdf-div" className="in-line-div" />;
 };
 //
 export default AdobeInline;

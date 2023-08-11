@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const MyWork = () => {
   return (
-    <div className="MyWork">
+    <div className="MyWork" id="work-cat">
       <h4>My Work - 3Ps</h4>
       <div className="MyWork_wrapper">
         <div className="work">
