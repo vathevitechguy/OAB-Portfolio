@@ -4,7 +4,6 @@
   background-color: $background-dark;
   color: $text-light;
   padding: 100px;
-
   margin-bottom: 122px;
   &_wrapper {
     padding: 50px 0 40px 0;
@@ -21,5 +20,6 @@
   }
   @media (max-width: $bm-md) {
     padding: 60px;
+    margin-bottom: 80px;
   }
 }

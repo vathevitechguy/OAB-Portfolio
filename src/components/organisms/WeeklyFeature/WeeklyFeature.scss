@@ -1,0 +1,47 @@
+@import '../../../scss/lib.scss';
+.WeeklyFeature {
+  margin-bottom: 126px;
+  text-align: left;
+  cursor: pointer;
+  &_wrapper {
+    margin-top: 46px;
+    padding: 153px 66px 20px 66px;
+    color: $text-light;
+    border-radius: 50px;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url('../../../assets/weekfeature-bg.png'), lightgray 50% / cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    h3 {
+      max-width: 980px;
+      width: 100%;
+      font-weight: 600;
+    }
+    p {
+      font-size: 20px;
+    }
+    .date {
+      text-align: right;
+    }
+  }
+  @media (max-width: $bm-md) {
+    &_wrapper {
+      margin-top: 30px;
+      padding: 70px 20px 40px 20px;
+      border-radius: 20px;
+      h3 {
+        line-height: 50px;
+      }
+      p {
+        font-size: 16px !important;
+      }
+      .date {
+        margin-top: 10px;
+      }
+    }
+  }
+}

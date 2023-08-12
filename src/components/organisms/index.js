@@ -6,6 +6,7 @@ import Expertise from './Expertise/Expertise';
 import MyWork from './MyWork/MyWork';
 import Resume from './Resume/Resume';
 import HeroStandard from './HeroStandard/HeroStandard';
+import WeeklyFeature from './WeeklyFeature/WeeklyFeature';
 
 export {
   Endorsements,
@@ -16,4 +17,5 @@ export {
   HeroStandard,
   HeroWithMedia,
   Navbar,
+  WeeklyFeature,
 };
