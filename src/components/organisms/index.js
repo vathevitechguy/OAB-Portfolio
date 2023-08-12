@@ -5,6 +5,7 @@ import Navbar from './Navbar/Navbar';
 import Expertise from './Expertise/Expertise';
 import MyWork from './MyWork/MyWork';
 import Resume from './Resume/Resume';
+import HeroStandard from './HeroStandard/HeroStandard';
 
 export {
   Endorsements,
@@ -12,6 +13,7 @@ export {
   MyWork,
   Resume,
   Expertise,
+  HeroStandard,
   HeroWithMedia,
   Navbar,
 };

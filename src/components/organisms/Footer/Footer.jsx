@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.scss';
+import ArrowRight from '../../../assets/icons/arrow-right.svg';
 import { LightBtn } from '../../atoms/Buttons/Buttons';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -9,7 +10,11 @@ const Footer = () => {
       <div className="Footer_wrapper">
         <div className="Footer_CTA">
           <h2>Want to get in touch?</h2>
-          <LightBtn>Contact Me</LightBtn>
+          <LightBtn
+            nameTag="Contact Me"
+            iconSrc={ArrowRight}
+            altText="arrow-right"
+          />
         </div>
         <div className="Footer_main">
           <div className="Footer_main--wrapper">
