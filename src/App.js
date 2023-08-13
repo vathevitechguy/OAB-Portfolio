@@ -1,13 +1,19 @@
 import logo from './logo.svg';
 import './App.scss';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+  RouterProvider,
+  createBrowserRouter,
+  useParams,
+} from 'react-router-dom';
 import Root from './pages/Root';
 import Error from './pages/Error';
 import Home from './pages/Home';
 import About from './pages/About';
 import Blog from './pages/Blog';
+import Post from './pages/Post';
 
 function App() {
+  let { blogID } = useParams();
   const router = createBrowserRouter([
     {
       path: '/',
@@ -20,7 +26,11 @@ function App() {
           element: <Home />,
         },
         { path: 'about', element: <About /> },
-        { path: 'personal-blog', element: <Blog /> },
+        {
+          path: 'personal-blog',
+          element: <Blog />,
+          children: [{ path: ':postID', element: <Post /> }],
+        },
       ],
     },
   ]);
