@@ -1,0 +1,21 @@
+@import '../../../scss/lib.scss';
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid $background-dark;
+  background-color: transparent;
+  border-radius: 30px;
+  font-size: 18px;
+  width: 100%;
+  max-width: 300px;
+  height: 60px;
+  transition: border-color 0.3s ease-in-out;
+  &::placeholder {
+    text-align: center;
+  }
+
+  &:focus {
+    outline: none;
+    // border-color: opacify($color: #000000, $amount: );
+    opacity: 9;
+  }
+}

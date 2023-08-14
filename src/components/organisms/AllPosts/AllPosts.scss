@@ -1,0 +1,23 @@
+@import '../../../scss/lib.scss';
+.AllPosts {
+  //   display: flex;
+  flex-direction: column;
+  &_wrapper {
+    .heading {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      margin-bottom: 45px;
+    }
+    .postCards {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    button {
+      margin-bottom: 80px;
+    }
+  }
+}

@@ -7,8 +7,10 @@ import MyWork from './MyWork/MyWork';
 import Resume from './Resume/Resume';
 import HeroStandard from './HeroStandard/HeroStandard';
 import WeeklyFeature from './WeeklyFeature/WeeklyFeature';
+import AllPosts from './AllPosts/AllPosts';
 
 export {
+  AllPosts,
   Endorsements,
   Footer,
   MyWork,

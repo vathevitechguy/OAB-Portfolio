@@ -1,6 +1,6 @@
 import React from 'react';
 import './Blog.scss';
-import { HeroStandard, WeeklyFeature } from '../components/organisms';
+import { AllPosts, HeroStandard, WeeklyFeature } from '../components/organisms';
 import { Outlet } from 'react-router-dom';
 
 const Blog = () => {
@@ -13,6 +13,7 @@ const Blog = () => {
         date="March 06, 2023"
         postID="8dncrdrt70ps"
       />
+      <AllPosts />
       {/* <Outlet /> */}
     </div>
   );
