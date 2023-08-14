@@ -1,5 +1,6 @@
 import React from 'react';
 import './PostCard.scss';
+import { Link } from 'react-router-dom';
 
 const PostCard = (props) => {
   const { id, imgSrc, tag, title, date } = props;
@@ -11,17 +12,19 @@ const PostCard = (props) => {
 
   return (
     <div className="PostCard">
-      <div className="img-item">
-        <img src={imgSrc} />
-      </div>
-      <div className="PostCard_wrapper">
-        <h5 className="tag">
-          {tag}
-          <span className={colorGroup()}>.</span>
-        </h5>
-        <h5 className="title">{title}</h5>
-        <p>Posted: {date}</p>
-      </div>
+      <Link to={`${id}`}>
+        <div className="img-item">
+          <img src={imgSrc} />
+        </div>
+        <div className="PostCard_wrapper">
+          <h5 className="tag">
+            {tag}
+            <span className={colorGroup()}>.</span>
+          </h5>
+          <h5 className="title">{title}</h5>
+          <p>Posted: {date}</p>
+        </div>
+      </Link>
     </div>
   );
 };

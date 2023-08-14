@@ -13,7 +13,7 @@ import Blog from './pages/Blog';
 import Post from './pages/Post';
 
 function App() {
-  let { blogID } = useParams();
+  let { postID } = useParams();
   const router = createBrowserRouter([
     {
       path: '/',
@@ -29,8 +29,9 @@ function App() {
         {
           path: 'personal-blog',
           element: <Blog />,
-          children: [{ path: ':postID', element: <Post /> }],
+          // children: [{ path: ':postID', element: <Post /> }],
         },
+        { path: '/personal-blog/:postID', element: <Post /> },
       ],
     },
   ]);
