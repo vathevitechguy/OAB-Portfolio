@@ -16,14 +16,12 @@ const PostCard = (props) => {
         <div className="img-item">
           <img src={imgSrc} />
         </div>
-        <div className="PostCard_wrapper">
-          <h5 className="tag">
-            {tag}
-            <span className={colorGroup()}>.</span>
-          </h5>
-          <h5 className="title">{title}</h5>
-          <p>Posted: {date}</p>
-        </div>
+        <h5 className="tag">
+          {tag}
+          <span className={colorGroup()}>.</span>
+        </h5>
+        <h5 className="title">{title}</h5>
+        <p>Posted: {date}</p>
       </Link>
     </div>
   );

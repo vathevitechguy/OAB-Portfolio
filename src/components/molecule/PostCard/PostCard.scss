@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 520px;
   margin-bottom: 40px;
+  flex: 0 0 calc(33.33% - 20px);
   .img-item {
     width: 100%;
     border-radius: 20px;
@@ -55,12 +56,10 @@
   .red {
     color: #f81919;
   }
-  // &_wrapper {
-  //   &:hover {
-  //     background-color: #fff;
-  //     padding: 20px;
-  //     border-bottom-left-radius: 24px;
-  //     border-bottom-right-radius: 24px;
-  //   }
-  // }
+  @media (max-width: $bm-md) {
+    flex: 0 0 calc(50% - 20px);
+  }
+  @media (max-width: $bm-sm) {
+    flex: 0 0 calc(100% - 0px);
+  }
 }
