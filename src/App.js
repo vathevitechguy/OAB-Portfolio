@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Blog from './pages/Blog';
 import Post from './pages/Post';
+import { DUMMY_POST } from './hooks/DummyPost';
 
 function App() {
   let { postID } = useParams();
@@ -37,6 +38,7 @@ function App() {
             <Post
               title="How is AI Impacting Human Intelligence? My View."
               date="March 16, 1998"
+              content={DUMMY_POST}
             />
           ),
         },

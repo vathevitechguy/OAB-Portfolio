@@ -69,6 +69,16 @@
     }
   }
   &_content {
+    display: flex;
+    text-align: justify;
+    justify-content: center;
+    margin-bottom: 114px;
+    p {
+      width: 90%;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 50x;
+    }
   }
 
   @media (max-width: $bm-xl) {

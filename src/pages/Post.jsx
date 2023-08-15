@@ -23,7 +23,9 @@ const Post = (props) => {
             <p className="date">Posted on {props.date}</p>
           </div>
         </div>
-        <div className="Post_content">{props.content}</div>
+        <div className="Post_content">
+          <p>{props.content}</p>
+        </div>
       </div>
     </div>
   );
