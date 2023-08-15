@@ -31,7 +31,15 @@ function App() {
           element: <Blog />,
           // children: [{ path: ':postID', element: <Post /> }],
         },
-        { path: '/personal-blog/:postID', element: <Post /> },
+        {
+          path: '/personal-blog/:postID',
+          element: (
+            <Post
+              title="How is AI Impacting Human Intelligence? My View."
+              date="March 16, 1998"
+            />
+          ),
+        },
       ],
     },
   ]);

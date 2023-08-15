@@ -12,9 +12,7 @@ const WeeklyFeature = (props) => {
           <h3>{title}</h3>
           <p>Tap to read</p>
           <div className="date">
-            <p>
-              Published on <i>{date}</i>
-            </p>
+            <p>Posted on {date}</p>
           </div>
         </div>
       </Link>

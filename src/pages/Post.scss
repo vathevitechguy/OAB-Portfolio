@@ -1,0 +1,103 @@
+@import '../scss/lib.scss';
+.Post {
+  padding: 80px 115px 0 115px;
+  display: flex;
+  flex-direction: column;
+  .go-back {
+    width: fit-content;
+    display: flex;
+    align-items: flex-start;
+
+    align-items: center;
+    &:hover {
+      opacity: 0.7;
+    }
+    img {
+      width: 100%;
+      max-width: 50px;
+      margin-right: 9px;
+    }
+    p {
+      font-size: 24px !important;
+      font-weight: 600;
+      color: $text-dark;
+    }
+  }
+  &_header {
+    margin: 46px 0 114px;
+
+    padding: 107px 66px 25px 66px;
+    color: $text-light;
+    border-radius: 50px;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+      ),
+      url('../assets/weekfeature-bg.png'), lightgray 50% / cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    h2 {
+      text-align: left;
+      width: 100%;
+      max-width: 70%;
+      margin-bottom: 143px;
+    }
+    .publisher-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      .name {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        gap: 30px;
+        img {
+          max-width: 80px;
+          width: 100%;
+          height: auto;
+          background-color: #fff;
+          border-radius: 100px;
+          padding: 3px;
+        }
+      }
+      .date {
+        font-size: 22px;
+      }
+    }
+  }
+  &_content {
+  }
+
+  @media (max-width: $bm-xl) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media (max-width: $bm-md) {
+    padding: 40px 18px 0 18px;
+    &_header {
+      margin-top: 30px;
+      padding: 90px 20px 40px 20px;
+      border-radius: 20px;
+      h2 {
+        max-width: 100%;
+        margin-bottom: 90px;
+      }
+      .publisher-info {
+        .name {
+          gap: 15px;
+          img {
+            max-width: 60px !important;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $bm-sm) {
+    .date {
+      margin-top: 30px;
+    }
+  }
+}
