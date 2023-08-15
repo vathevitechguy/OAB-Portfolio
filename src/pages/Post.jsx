@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import './Post.scss';
 import ArrowPointingLeft from '../assets/icons/arrow-pointing-left.svg';
 import DarePass from '../assets/DarePass.png';
+import Comments from '../components/organisms/Comments/Comments';
 
 const Post = (props) => {
   const { postID } = useParams();
@@ -26,6 +27,7 @@ const Post = (props) => {
         <div className="Post_content">
           <p>{props.content}</p>
         </div>
+        <Comments />
       </div>
     </div>
   );

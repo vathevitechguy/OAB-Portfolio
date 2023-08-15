@@ -1,0 +1,44 @@
+@import '../../../scss/lib.scss';
+.Comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  background-color: #eeeff1;
+  margin-bottom: 40px;
+  padding: 15px 38px;
+  &_data {
+    margin-left: 23px;
+    text-align: left;
+    width: 100%;
+
+    .userName {
+      font-size: 25px;
+      font-weight: 600;
+    }
+    p {
+      color: $text-dark;
+      font-size: 20px;
+      line-height: 32px;
+      margin-top: 2px;
+      width: 90%;
+    }
+  }
+  .date {
+    color: #62646d;
+    max-width: 120px;
+    width: 100%;
+    font-size: 20px;
+    font-style: italic;
+  }
+  @media (max-width: $bm-md) {
+    padding: 30px;
+    flex-wrap: wrap;
+    &_data {
+      margin: 20px 0 15px 0;
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
