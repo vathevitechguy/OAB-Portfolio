@@ -2,19 +2,24 @@ import React from 'react';
 import './Comment.scss';
 import { Avatar } from '../../atoms';
 
-const Comment = () => {
+const Comment = (props) => {
+  const { id, userName, comment, date } = props;
+
+  const initials = () => {
+    return userName
+      .split(' ')
+      .map((letter) => letter.charAt(0).toUpperCase())
+      .join(''); // You were missing the join() function here
+  };
+
   return (
     <div className="Comment">
-      <Avatar initials="VA" />
+      <Avatar initials={initials()} />
       <div className="Comment_data">
-        <div className="userName">Victor Aromose</div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercita.
-        </p>
+        <div className="userName">{userName}</div>
+        <p>{comment}</p>
       </div>
-      <span className="date">Feb. 06, 2023</span>
+      <span className="date">{date}</span>
     </div>
   );
 };
