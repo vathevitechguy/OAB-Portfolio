@@ -8,9 +8,11 @@ import Resume from './Resume/Resume';
 import HeroStandard from './HeroStandard/HeroStandard';
 import WeeklyFeature from './WeeklyFeature/WeeklyFeature';
 import AllPosts from './AllPosts/AllPosts';
+import AboutHeader from './AboutHeader/AboutHeader';
 
 export {
   AllPosts,
+  AboutHeader,
   Endorsements,
   Footer,
   MyWork,
