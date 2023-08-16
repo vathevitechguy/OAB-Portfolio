@@ -2,6 +2,7 @@ import React from 'react';
 import './About.scss';
 import { AboutHeader } from '../components/organisms';
 import { DUMMY_POST } from '../hooks/DummyPost';
+import SkillBoard from '../components/molecule/SkillBoard/SkillBoard';
 
 const About = () => {
   return (
@@ -13,6 +14,7 @@ const About = () => {
       </div>
       <div className="About_skillboard">
         <h4>Skill Board</h4>
+        <SkillBoard />
       </div>
     </div>
   );

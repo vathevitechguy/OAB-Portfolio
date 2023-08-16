@@ -1,0 +1,8 @@
+.Skillboard {
+  display: flex;
+  flex-flow: row wrap;
+  //   justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 20px 0 150px;
+}
