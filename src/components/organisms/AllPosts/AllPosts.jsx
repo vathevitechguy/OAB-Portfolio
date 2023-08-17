@@ -80,7 +80,7 @@ const AllPosts = () => {
           <SearchInput placeholder="Search" onChange={null} />
         </div>
         <div className="postCards">{postData}</div>
-        <DarkBtn>Load More</DarkBtn>
+        <DarkBtn title="Load More" />
       </div>
     </div>
   );
