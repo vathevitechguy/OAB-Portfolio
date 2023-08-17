@@ -9,6 +9,7 @@ import HeroStandard from './HeroStandard/HeroStandard';
 import WeeklyFeature from './WeeklyFeature/WeeklyFeature';
 import AllPosts from './AllPosts/AllPosts';
 import AboutHeader from './AboutHeader/AboutHeader';
+import Modal from './Modal/Modal';
 
 export {
   AllPosts,
@@ -21,5 +22,6 @@ export {
   HeroStandard,
   HeroWithMedia,
   Navbar,
+  Modal,
   WeeklyFeature,
 };

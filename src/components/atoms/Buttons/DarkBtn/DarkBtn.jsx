@@ -3,7 +3,7 @@ import './DarkBtn.scss';
 const DarkBtn = (props) => {
   return (
     <button type="button" className="dark-btn">
-      {props.children}
+      {props.title}
     </button>
   );
 };

@@ -21,7 +21,7 @@ const Navbar = () => {
           <NavLink to="personal-blog">Blog</NavLink>
           <NavLink to="about">About</NavLink>
           <NavLink to="/#work-cat">
-            <DarkBtn>View Work</DarkBtn>
+            <DarkBtn title="View Work" />
           </NavLink>
         </div>
         <div
