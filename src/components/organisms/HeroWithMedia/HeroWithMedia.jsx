@@ -20,7 +20,7 @@ const HeroWithMedia = () => {
               of Delaware. <Link to="about"> Learn more</Link>.
             </p>
             <div className="buttons">
-              <DarkBtn>Contact Me</DarkBtn>
+              <DarkBtn title="Contact Me" />
               <div className="socials">
                 <Link to="#">
                   <img src={Linkedin} alt="Linkedin" />
