@@ -1,23 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Modal.scss';
 import { DarkBtn } from '../../atoms/Buttons/Buttons';
 import Close from '../../../assets/icons/close.png';
 
 const Modal = (props) => {
-  const { title } = props;
+  const { type, isOpen, onClose } = props;
+  const [modalType, setModalType] = useState({
+    title: '',
+    textLabel: '',
+    buttonText: '',
+  });
+
+  useEffect(() => {
+    if (type === 'contact') {
+      setModalType({
+        title: 'Send Oluwadare a message!',
+        textLabel: 'Message',
+        buttonText: 'Submit',
+      });
+    } else if (type === 'comment')
+      setModalType({
+        title: 'Leave a comment',
+        textLabel: 'Comment',
+        buttonText: 'Post Comment',
+      });
+  }, [type]);
+  const handleOverlayClick = (event) => {
+    if (event.target.classList.contains('Modal')) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="Modal">
+    <div
+      className={`Modal ${isOpen ? 'open' : ''}`}
+      onClick={handleOverlayClick}
+    >
       <div className="Modal_content">
-        <img src={Close} alt="close" />
+        <img src={Close} alt="close" onClick={onClose} />
         <div className="Modal_container">
-          <h6>{title}</h6>
+          <h6>{modalType.title}</h6>
           <form>
             <div className="form_name">
-              <label>Name</label>
+              <label>Full Name</label>
               <input
                 type="text"
                 maxLength={256}
-                placeholder="Enter your name"
+                placeholder="Enter your full name"
               />
             </div>
             <div className="form_email">
@@ -31,10 +60,10 @@ const Modal = (props) => {
               />
             </div>
             <div className="form_message">
-              <label>Message</label>
+              <label>{modalType.textLabel}</label>
               <textarea rows="4" />
             </div>
-            <DarkBtn title="Submit" />
+            <DarkBtn title={modalType.buttonText} />
           </form>
         </div>
       </div>

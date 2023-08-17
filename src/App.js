@@ -13,9 +13,11 @@ import Blog from './pages/Blog';
 import Post from './pages/Post';
 import { DUMMY_POST } from './hooks/DummyPost';
 import { Modal } from './components/organisms';
+import { useState } from 'react';
 
 function App() {
   let { postID } = useParams();
+  const [modalState, setModalState] = useState(false);
   const router = createBrowserRouter([
     {
       path: '/',
@@ -49,7 +51,13 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router} />
-      <Modal title="Send Oluwadare a message!" />
+      {modalState && (
+        <Modal
+          type="contact"
+          isOpen={modalState}
+          onClose={setModalState(false)}
+        />
+      )}
     </div>
   );
 }
