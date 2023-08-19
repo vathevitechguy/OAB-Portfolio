@@ -40,7 +40,6 @@ function App() {
         {
           path: 'personal-blog',
           element: <Blog />,
-          // children: [{ path: ':postID', element: <Post /> }],
         },
         {
           path: '/personal-blog/:postID',

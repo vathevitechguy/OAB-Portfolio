@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './Post.scss';
 import ArrowPointingLeft from '../assets/icons/arrow-pointing-left.svg';
 import DarePass from '../assets/DarePass.png';
@@ -8,6 +8,7 @@ import { Modal } from '../components/organisms';
 
 const Post = (props) => {
   const { postID } = useParams();
+  const navigate = useNavigate();
   const [commentModal, setCommentModal] = useState(false);
   const commentModalHandler = () => {
     setCommentModal(true);
@@ -18,7 +19,7 @@ const Post = (props) => {
   return (
     <div className="Post">
       <div className="Post_wrapper">
-        <Link className="go-back" to={null}>
+        <Link className="go-back" onClick={() => navigate(-1)}>
           <img src={ArrowPointingLeft} alt="go-back" />
           <p>Go Back</p>
         </Link>
