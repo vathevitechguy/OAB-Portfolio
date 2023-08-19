@@ -5,6 +5,7 @@ import {
   createBrowserRouter,
   useParams,
 } from 'react-router-dom';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Root from './pages/Root';
 import Error from './pages/Error';
 import Home from './pages/Home';
@@ -14,6 +15,11 @@ import Post from './pages/Post';
 import { DUMMY_POST } from './hooks/DummyPost';
 import { Modal } from './components/organisms';
 import { useState } from 'react';
+
+const client = new ApolloClient({
+  uri: 'http://localhost:1337/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
   let { postID } = useParams();
@@ -56,10 +62,12 @@ function App() {
   ]);
   return (
     <div className="App">
-      <RouterProvider router={router} />
-      {modalState && (
-        <Modal type="contact" isOpen={modalState} onClose={onCloseModal} />
-      )}
+      <ApolloProvider client={client}>
+        <RouterProvider router={router} />
+        {modalState && (
+          <Modal type="contact" isOpen={modalState} onClose={onCloseModal} />
+        )}
+      </ApolloProvider>
     </div>
   );
 }
