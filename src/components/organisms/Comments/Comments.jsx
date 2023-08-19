@@ -3,7 +3,7 @@ import './Comments.scss';
 import Comment from '../../molecule/Comment/Comment';
 import { Link } from 'react-router-dom';
 
-const Comments = () => {
+const Comments = (props) => {
   return (
     <>
       <h4>Comments</h4>
@@ -24,7 +24,7 @@ const Comments = () => {
         veniam, quis nostrud exercita."
           date="Nov. 6, 2019"
         />
-        <Link className="submitComment" to={null}>
+        <Link className="submitComment" to={null} onClick={props.openComModal}>
           Have a thought? Leave a comment now!
         </Link>
       </div>

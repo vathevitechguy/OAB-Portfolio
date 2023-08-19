@@ -4,7 +4,7 @@ import ArrowRight from '../../../assets/icons/arrow-right.svg';
 import { LightBtn } from '../../atoms/Buttons/Buttons';
 import { Link, NavLink } from 'react-router-dom';
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <div className="Footer">
       <div className="Footer_wrapper">
@@ -14,6 +14,7 @@ const Footer = () => {
             nameTag="Contact Me"
             iconSrc={ArrowRight}
             altText="arrow-right"
+            onClick={props.openModal}
           />
         </div>
         <div className="Footer_main">

@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './Post.scss';
 import ArrowPointingLeft from '../assets/icons/arrow-pointing-left.svg';
 import DarePass from '../assets/DarePass.png';
 import Comments from '../components/organisms/Comments/Comments';
+import { Modal } from '../components/organisms';
 
 const Post = (props) => {
   const { postID } = useParams();
+  const [commentModal, setCommentModal] = useState(false);
+  const commentModalHandler = () => {
+    setCommentModal(true);
+  };
+  const closeCommentModal = () => {
+    setCommentModal(false);
+  };
   return (
     <div className="Post">
       <div className="Post_wrapper">
@@ -27,8 +35,15 @@ const Post = (props) => {
         <div className="Post_content">
           <p>{props.content}</p>
         </div>
-        <Comments />
+        <Comments openComModal={commentModalHandler} />
       </div>
+      {commentModal && (
+        <Modal
+          type="comment"
+          isOpen={commentModal}
+          onClose={closeCommentModal}
+        />
+      )}
     </div>
   );
 };

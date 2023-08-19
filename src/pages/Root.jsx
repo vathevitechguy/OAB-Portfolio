@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Footer, Navbar } from '../components/organisms';
 
-const Root = () => {
-  // const [modalState, setModalState] = useState(false);
+const Root = (props) => {
   return (
     <>
       <Navbar />
       <Outlet />
-      <Footer />
-      {/* {modalState && <Modal type="contact" />} */}
+      <Footer openModal={props.openModal} />
     </>
   );
 };

@@ -18,10 +18,17 @@ import { useState } from 'react';
 function App() {
   let { postID } = useParams();
   const [modalState, setModalState] = useState(false);
+
+  const onOpenModal = () => {
+    setModalState(true);
+  };
+  const onCloseModal = () => {
+    setModalState(false);
+  };
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Root />,
+      element: <Root openModal={onOpenModal} />,
       errorElement: <Error />,
       // loader: ro,
       children: [
@@ -52,11 +59,7 @@ function App() {
     <div className="App">
       <RouterProvider router={router} />
       {modalState && (
-        <Modal
-          type="contact"
-          isOpen={modalState}
-          onClose={setModalState(false)}
-        />
+        <Modal type="contact" isOpen={modalState} onClose={onCloseModal} />
       )}
     </div>
   );
