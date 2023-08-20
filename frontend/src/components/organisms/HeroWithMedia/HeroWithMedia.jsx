@@ -7,7 +7,8 @@ import Dare from '../../../assets/dare.png';
 import Email from '../../../assets/icons/email.svg';
 import Linkedin from '../../../assets/icons/linkedin.svg';
 
-const HeroWithMedia = () => {
+const HeroWithMedia = (props) => {
+  const { heroDescription } = props;
   return (
     <div className="HeroWithMedia">
       <Gradient>
@@ -15,9 +16,7 @@ const HeroWithMedia = () => {
           <div className="HeroWithMedia_wrapper--col1">
             <h1>Oluwadare Abiodun Badejo</h1>
             <p>
-              A Chemical Engineer passionate about Process system engineering
-              and enterprise-wide optimization. Graduate student at University
-              of Delaware. <Link to="about"> Learn more</Link>.
+              {heroDescription} <Link to="about"> Learn more</Link>.
             </p>
             <div className="buttons">
               <DarkBtn title="Contact Me" />

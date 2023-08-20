@@ -3,12 +3,25 @@ import './AdobeInline.scss';
 import useAdobeSDK from '../../../hooks/useAdobeSDK';
 
 const AdobeInline = (props) => {
+  const { data } = props;
   useEffect(() => {
+    console.log(data.name);
     const viewSDKClient = new useAdobeSDK();
     viewSDKClient.ready().then(() => {
-      viewSDKClient.previewFile('pdf-div', {
-        embedMode: props.mode,
-      });
+      viewSDKClient.previewFile(
+        'pdf-div',
+        {
+          content: {
+            location: {
+              url: `http://localhost:1337${data.url}`,
+            },
+          },
+          metaData: { fileName: `${data.name}`, id: `${data.hash}` },
+        },
+        {
+          embedMode: props.mode,
+        }
+      );
     });
   }, []);
 

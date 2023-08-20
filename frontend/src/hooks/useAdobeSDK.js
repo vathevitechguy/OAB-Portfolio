@@ -14,11 +14,10 @@ class useAdobeSDK {
   }
 
   ready() {
-    console.log('Ready to Fire');
     return this.readyPromise;
   }
 
-  previewFile(divId, viewerConfig) {
+  previewFile(divId, pdfContentData, viewerConfig) {
     const config = {
       /* Pass your registered client id */
       clientId: '8c0cd670273d451cbc9b351b11d22318',
@@ -30,39 +29,41 @@ class useAdobeSDK {
     }
     /* Initialize the AdobeDC View object */
     this.adobeDCView = new window.AdobeDC.View(config);
+    // const defaultContentConfig = {
+    //   /* Pass information on how to access the file */
+
+    //   /* Pass information on how to access the file */
+    //   content: {
+    //     /* Location of file where it is hosted */
+    //     location: {
+    //       url: 'http://localhost:1337/uploads/oluwadarebadejo_94830433f1.pdf',
+    //       /*
+    //                     If the file URL requires some additional headers, then it can be passed as follows:-
+    //                     headers: [
+    //                         {
+    //                             key: "<HEADER_KEY>",
+    //                             value: "<HEADER_VALUE>",
+    //                         }
+    //                     ]
+    //                     */
+    //     },
+    //   },
+    //   /* Pass meta data of file */
+    //   metaData: {
+    //     /* file name */
+    //     // fileName: 'Intern Program 2023 One-Pager.pdf',
+    //     fileName: 'OluwadareBadejo.pdf',
+
+    //     // /* file ID */
+    //     // id: '8c0cd670273d451cbc9b351b11d22318',
+    //   },
+    // };
 
     /* Invoke the file preview API on Adobe DC View object */
     const previewFilePromise = this.adobeDCView.previewFile(
-      {
-        /* Pass information on how to access the file */
-        content: {
-          /* Location of file where it is hosted */
-          location: {
-            url: 'https://acrobatservices.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf',
-            /*
-                        If the file URL requires some additional headers, then it can be passed as follows:-
-                        headers: [
-                            {
-                                key: "<HEADER_KEY>",
-                                value: "<HEADER_VALUE>",
-                            }
-                        ]
-                        */
-          },
-        },
-        /* Pass meta data of file */
-        metaData: {
-          /* file name */
-          // fileName: 'Intern Program 2023 One-Pager.pdf',
-          fileName: 'Bodea Brochure.pdf',
-
-          /* file ID */
-          id: '8c0cd670273d451cbc9b351b11d22318',
-        },
-      },
+      pdfContentData,
       viewerConfig
     );
-    console.log('I work');
     return previewFilePromise;
   }
 

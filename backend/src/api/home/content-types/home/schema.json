@@ -24,13 +24,13 @@
     "myWork": {
       "type": "json"
     },
-    "Resume": {
-      "allowedTypes": [
-        "files"
-      ],
+    "resume": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }
