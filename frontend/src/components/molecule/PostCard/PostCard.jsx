@@ -14,14 +14,14 @@ const PostCard = (props) => {
     <div className="PostCard">
       <Link to={`${id}`}>
         <div className="img-item">
-          <img src={imgSrc} />
+          <img src={`http://localhost:1337${imgSrc}`} />
         </div>
         <h5 className="tag">
           {tag}
           <span className={colorGroup()}>.</span>
         </h5>
         <h5 className="title">{title}</h5>
-        <p>Posted: {date}</p>
+        <p>Published: {date}</p>
       </Link>
     </div>
   );

@@ -44,3 +44,42 @@ export const GET_ABOUT = gql`
     }
   }
 `;
+
+export const GET_POSTS = gql`
+  query {
+    posts {
+      data {
+        attributes {
+          postID
+          post_categories {
+            data {
+              attributes {
+                name
+              }
+            }
+          }
+          title
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          author
+          publishedAt
+          featured
+          comments {
+            data {
+              attributes {
+                userName
+                content
+                publishedAt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
