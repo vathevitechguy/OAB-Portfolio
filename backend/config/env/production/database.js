@@ -1,5 +1,3 @@
-// path: ./config/env/production/database.js
-
 const { parse } = require("pg-connection-string");
 
 module.exports = ({ env }) => {
@@ -14,7 +12,6 @@ module.exports = ({ env }) => {
         database,
         user,
         password,
-        ssl: { rejectUnauthorized: false },
       },
       debug: false,
     },
