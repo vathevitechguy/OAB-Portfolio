@@ -14,7 +14,7 @@ const PostCard = (props) => {
     <div className="PostCard">
       <Link to={`${id}`}>
         <div className="img-item">
-          <img src={`http://localhost:1337${imgSrc}`} />
+          <img src={`${imgSrc}`} />
         </div>
         <h5 className="tag">
           {tag}

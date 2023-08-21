@@ -7,7 +7,7 @@ const WeeklyFeature = (props) => {
   console.log(imgSrc);
 
   const wrapperStyle = {
-    background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url('http://localhost:1337${imgSrc}'), lightgray 50% / cover no-repeat`,
+    background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url('${imgSrc}'), lightgray 50% / cover no-repeat`,
   };
 
   return (
