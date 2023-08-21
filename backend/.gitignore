@@ -93,6 +93,7 @@ pids
 logs
 results
 node_modules
+package-lock.json
 .node_history
 
 ############################
@@ -112,3 +113,4 @@ exports
 dist
 build
 .strapi-updater.json
+
