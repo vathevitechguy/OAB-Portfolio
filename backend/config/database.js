@@ -10,7 +10,7 @@ module.exports = ({ env }) => {
         password: env("DATABASE_PASSWORD"),
         ssl: env.bool("DATABASE_SSL", true),
       },
-      debug: false,
+      // debug: false,
     },
   };
 };
