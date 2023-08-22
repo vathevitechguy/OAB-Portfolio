@@ -37,7 +37,8 @@
     },
     "postID": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "targetField": "title"
     },
     "author": {
       "type": "string"

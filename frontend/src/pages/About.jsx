@@ -12,7 +12,6 @@ const About = () => {
   if (error) return `Error! ${error.message}`;
 
   const attributes = data.about.data.attributes;
-  console.log(attributes?.biography);
 
   return (
     <div className="About">

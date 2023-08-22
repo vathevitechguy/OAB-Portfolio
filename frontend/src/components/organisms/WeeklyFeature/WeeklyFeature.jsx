@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const WeeklyFeature = (props) => {
   const { title, date, postID, imgSrc } = props;
-  console.log(imgSrc);
 
   const wrapperStyle = {
     background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url('${imgSrc}'), lightgray 50% / cover no-repeat`,

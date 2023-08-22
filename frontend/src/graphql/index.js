@@ -49,6 +49,7 @@ export const GET_POSTS = gql`
   query {
     posts {
       data {
+        id
         attributes {
           postID
           post_categories {

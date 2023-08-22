@@ -5,17 +5,21 @@ import ArrowPointingLeft from '../assets/icons/arrow-pointing-left.svg';
 import DarePass from '../assets/DarePass.png';
 import Comments from '../components/organisms/Comments/Comments';
 import { Modal } from '../components/organisms';
+import { allPosts } from './Blog';
 
 const Post = (props) => {
   const { postID } = useParams();
   const navigate = useNavigate();
+  const [currentPostID, setCurrentPostID] = useState('');
   const [commentModal, setCommentModal] = useState(false);
+
   const commentModalHandler = () => {
     setCommentModal(true);
   };
   const closeCommentModal = () => {
     setCommentModal(false);
   };
+
   return (
     <div className="Post">
       <div className="Post_wrapper">
