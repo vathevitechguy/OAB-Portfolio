@@ -5,7 +5,6 @@ const useCreateCommentMutation = () => {
   const [createComment, { loading, error, data }] = useMutation(CREATE_COMMENT);
 
   const createCommentHandler = async (commentVariables) => {
-    console.log(commentVariables);
     try {
       const result = await createComment({
         variables: commentVariables,

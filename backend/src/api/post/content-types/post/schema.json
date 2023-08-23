@@ -49,14 +49,14 @@
       "target": "api::post-category.post-category",
       "mappedBy": "posts"
     },
+    "featured": {
+      "type": "boolean"
+    },
     "comments": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::comment.comment",
-      "mappedBy": "post"
-    },
-    "featured": {
-      "type": "boolean"
+      "mappedBy": "strapiPostId"
     }
   }
 }

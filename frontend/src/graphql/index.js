@@ -120,15 +120,15 @@ export const CREATE_COMMENT = gql`
   mutation CreateComment(
     $userName: String!
     $content: String!
-    $strapiId: Int!
-    $publishedAt: String!
+    $strapiPostId: ID
+    $publishedAt: DateTime
     $commentId: String!
   ) {
     createComment(
       data: {
         userName: $userName
         content: $content
-        post: $strapiId
+        strapiPostId: $strapiPostId
         publishedAt: $publishedAt
         commentId: $commentId
       }

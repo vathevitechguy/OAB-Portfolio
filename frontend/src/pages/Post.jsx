@@ -13,7 +13,7 @@ import useCreateCommentMutation from '../graphql/helpers/useCreateCommentMutatio
 
 const Post = () => {
   const { postID } = useParams();
-  const { loading, error, data } = useQuery(GET_POST_BY_POSTID, {
+  const { loading, error, data, refetch } = useQuery(GET_POST_BY_POSTID, {
     variables: {
       getPostID: postID,
     },
@@ -36,6 +36,7 @@ const Post = () => {
   const { strapiId, title, content, author, imgSrc, date, comments } =
     currentPost[0];
 
+  // Create Comment Handlers starts
   const commentModalHandler = () => {
     setCommentModal(true);
   };
@@ -43,23 +44,25 @@ const Post = () => {
     setCommentModal(false);
   };
 
-  // Create Comment Start
-
-  const commentSubmitHandler = (formData) => {
+  const commentSubmitHandler = async (formData) => {
     const { fullName, message } = formData;
+    const generateID = `${Math.random()
+      .toString(36)
+      .substr(2, 5)}-${Math.random().toString(36).substr(2, 5)}`;
     const commentVariables = {
       userName: fullName,
       content: message,
-      post: Number(strapiId),
+      strapiPostId: strapiId,
       publishedAt: new Date().toISOString(),
-      commentId: `${Math.random()}`,
+      commentId: generateID,
     };
     console.log(commentVariables);
-    createCommentHandler(commentVariables);
+    await createCommentHandler(commentVariables);
+    await refetch();
+    closeCommentModal();
   };
 
-  //Create comment ends here
-
+  // Dynamic background img
   const headerStyle = {
     background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url('http://localhost:1337${imgSrc}'), lightgray 50% / cover no-repeat`,
   };
