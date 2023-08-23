@@ -5,7 +5,6 @@ import useAdobeSDK from '../../../hooks/useAdobeSDK';
 const AdobeInline = (props) => {
   const { data } = props;
   useEffect(() => {
-    console.log(data.name);
     const viewSDKClient = new useAdobeSDK();
     viewSDKClient.ready().then(() => {
       viewSDKClient.previewFile(
@@ -13,7 +12,7 @@ const AdobeInline = (props) => {
         {
           content: {
             location: {
-              url: `${data.url}`,
+              url: `http://localhost:1337${data.url}`,
             },
           },
           metaData: { fileName: `${data.name}`, id: `${data.hash}` },

@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 const Resume = (props) => {
   const { data } = props;
-  console.log(data);
   const [fullscreenMode, setFullscreenMode] = useState(false);
   const fullscreenHandler = () => {
     if (!fullscreenMode) {

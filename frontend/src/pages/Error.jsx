@@ -1,10 +1,10 @@
 import React from 'react';
-import { Navbar } from '../components/organisms';
+import { useRouteError } from 'react-router-dom';
 
 const Error = () => {
+  // const error = useRouteError();
   return (
     <div>
-      <Navbar />
       <h3>Page Not Found!</h3>
     </div>
   );

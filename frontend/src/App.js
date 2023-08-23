@@ -38,16 +38,7 @@ const App = () => {
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="personal-blog" element={<Blog />} />
-      <Route
-        path="/personal-blog/:postID"
-        element={
-          <Post
-            title="How is AI Impacting Human Intelligence? My View."
-            date="March 16, 1998"
-            content={DUMMY_POST}
-          />
-        }
-      />
+      <Route path="/personal-blog/:postID" element={<Post />} />
     </Route>
   );
 

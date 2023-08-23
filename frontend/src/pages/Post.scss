@@ -29,14 +29,8 @@
     padding: 107px 66px 25px 66px;
     color: $text-light;
     border-radius: 50px;
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(0, 0, 0, 0.8) 100%
-      ),
-      url('../assets/weekfeature-bg.png'), lightgray 50% / cover no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-size: cover !important;
+    background-position: center !important;
     h2 {
       text-align: left;
       width: 100%;

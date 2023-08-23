@@ -49,7 +49,6 @@ export const GET_POSTS = gql`
   query {
     posts {
       data {
-        id
         attributes {
           postID
           post_categories {
@@ -67,12 +66,43 @@ export const GET_POSTS = gql`
               }
             }
           }
+          publishedAt
+          featured
+        }
+      }
+    }
+  }
+`;
+
+export const GET_POST_BY_POSTID = gql`
+  query GetPostByPostID($getPostID: String!) {
+    posts(filters: { postID: { eq: $getPostID } }) {
+      data {
+        attributes {
+          postID
+          post_categories {
+            data {
+              attributes {
+                name
+              }
+            }
+          }
+          title
+          content
           author
           publishedAt
           featured
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
           comments {
             data {
               attributes {
+                commentId
                 userName
                 content
                 publishedAt
