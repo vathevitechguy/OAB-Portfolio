@@ -10,7 +10,6 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import Post from './pages/Post';
 
-import { DUMMY_POST } from './hooks/DummyPost';
 import { Modal } from './components/organisms';
 
 const apolloClient = new ApolloClient({

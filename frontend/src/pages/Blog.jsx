@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Blog.scss';
 import { AllPosts, HeroStandard, WeeklyFeature } from '../components/organisms';
-import { Outlet } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../graphql';
 import { refactorPosts } from '../graphql/helper';
@@ -19,8 +18,8 @@ const Blog = () => {
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
   const getfeatured = postsData.map((post) => {
-    if (post.featured === true)
-      return (
+    return (
+      post.featured === true && (
         <WeeklyFeature
           key={post.id}
           postID={post.id}
@@ -28,7 +27,8 @@ const Blog = () => {
           date={post.date}
           imgSrc={post.imgSrc}
         />
-      );
+      )
+    );
   });
 
   return (

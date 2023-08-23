@@ -3,7 +3,7 @@ import './AdobeInline.scss';
 import useAdobeSDK from '../../../hooks/useAdobeSDK';
 
 const AdobeInline = (props) => {
-  const { data } = props;
+  const { data, mode } = props;
   useEffect(() => {
     const viewSDKClient = new useAdobeSDK();
     viewSDKClient.ready().then(() => {
@@ -18,11 +18,11 @@ const AdobeInline = (props) => {
           metaData: { fileName: `${data.name}`, id: `${data.hash}` },
         },
         {
-          embedMode: props.mode,
+          embedMode: mode,
         }
       );
     });
-  }, []);
+  }, [data.hash, data.name, data.url, mode]);
 
   return <div id="pdf-div" className="in-line-div" />;
 };

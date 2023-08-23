@@ -13,7 +13,10 @@ const MyWork = () => {
         <div className="work">
           <img src={Publications} alt="" />
           <h5>
-            <Link to="https://scholar.google.com/citations?user=gnYqDV8AAAAJ&hl=en">
+            <Link
+              target="_blank"
+              to="https://scholar.google.com/citations?user=gnYqDV8AAAAJ&hl=en"
+            >
               Publications
             </Link>
           </h5>
