@@ -27,7 +27,7 @@ const AllPosts = (props) => {
           <SearchInput placeholder="Search" onChange={null} />
         </div>
         <div className="postCards">{postData}</div>
-        {data.length >= 6 && <DarkBtn title="Load More" />}
+        {data.length >= 6 && <DarkBtn type="button" title="Load More" />}
       </div>
     </div>
   );

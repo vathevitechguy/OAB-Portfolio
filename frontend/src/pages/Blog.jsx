@@ -3,7 +3,7 @@ import './Blog.scss';
 import { AllPosts, HeroStandard, WeeklyFeature } from '../components/organisms';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../graphql';
-import { refactorPosts } from '../graphql/helper';
+import { refactorPosts } from '../graphql/helpers/refactorData';
 
 const Blog = () => {
   const { loading, error, data } = useQuery(GET_POSTS);

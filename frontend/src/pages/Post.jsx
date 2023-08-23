@@ -7,8 +7,9 @@ import Comments from '../components/organisms/Comments/Comments';
 import { Modal } from '../components/organisms';
 import { useQuery } from '@apollo/client';
 import { GET_POST_BY_POSTID } from '../graphql';
-import { refactorPosts } from '../graphql/helper';
+import { refactorPosts } from '../graphql/helpers/refactorData';
 import Error from './Error';
+import useCreateCommentMutation from '../graphql/helpers/useCreateCommentMutation';
 
 const Post = () => {
   const { postID } = useParams();
@@ -17,6 +18,8 @@ const Post = () => {
       getPostID: postID,
     },
   });
+  const { createCommentHandler } = useCreateCommentMutation();
+
   const navigate = useNavigate();
   const [currentPost, setCurrentPost] = useState([]);
   const [commentModal, setCommentModal] = useState(false);
@@ -30,7 +33,8 @@ const Post = () => {
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
   if (currentPost.length === 0) return <Error />;
-  const { id, title, content, author, imgSrc, date, comments } = currentPost[0];
+  const { strapiId, title, content, author, imgSrc, date, comments } =
+    currentPost[0];
 
   const commentModalHandler = () => {
     setCommentModal(true);
@@ -38,6 +42,23 @@ const Post = () => {
   const closeCommentModal = () => {
     setCommentModal(false);
   };
+
+  // Create Comment Start
+
+  const commentSubmitHandler = (formData) => {
+    const { fullName, message } = formData;
+    const commentVariables = {
+      userName: fullName,
+      content: message,
+      post: Number(strapiId),
+      publishedAt: new Date().toISOString(),
+      commentId: `${Math.random()}`,
+    };
+    console.log(commentVariables);
+    createCommentHandler(commentVariables);
+  };
+
+  //Create comment ends here
 
   const headerStyle = {
     background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url('http://localhost:1337${imgSrc}'), lightgray 50% / cover no-repeat`,
@@ -67,9 +88,11 @@ const Post = () => {
       </div>
       {commentModal && (
         <Modal
+          strapiId={strapiId}
           type="comment"
           isOpen={commentModal}
           onClose={closeCommentModal}
+          onSubmit={commentSubmitHandler}
         />
       )}
     </div>

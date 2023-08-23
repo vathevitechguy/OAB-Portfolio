@@ -2,7 +2,7 @@ import React from 'react';
 import './DarkBtn.scss';
 const DarkBtn = (props) => {
   return (
-    <button type="button" className="dark-btn">
+    <button type={props.type} className="dark-btn">
       {props.title}
     </button>
   );

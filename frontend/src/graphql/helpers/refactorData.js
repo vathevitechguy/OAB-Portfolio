@@ -13,6 +13,7 @@ export const refactorPosts = (data, setState) => {
     } = datum.attributes;
     return {
       id: postID,
+      strapiId: datum.id,
       title: title,
       author,
       content,

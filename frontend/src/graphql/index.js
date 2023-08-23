@@ -78,6 +78,7 @@ export const GET_POST_BY_POSTID = gql`
   query GetPostByPostID($getPostID: String!) {
     posts(filters: { postID: { eq: $getPostID } }) {
       data {
+        id
         attributes {
           postID
           post_categories {
@@ -109,6 +110,35 @@ export const GET_POST_BY_POSTID = gql`
               }
             }
           }
+        }
+      }
+    }
+  }
+`;
+
+export const CREATE_COMMENT = gql`
+  mutation CreateComment(
+    $userName: String!
+    $content: String!
+    $strapiId: Int!
+    $publishedAt: String!
+    $commentId: String!
+  ) {
+    createComment(
+      data: {
+        userName: $userName
+        content: $content
+        post: $strapiId
+        publishedAt: $publishedAt
+        commentId: $commentId
+      }
+    ) {
+      data {
+        attributes {
+          userName
+          commentId
+          content
+          publishedAt
         }
       }
     }
