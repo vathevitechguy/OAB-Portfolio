@@ -10,7 +10,7 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import Post from './pages/Post';
 
-import { Modal } from './components/organisms';
+import ContactModal from './components/organisms/ContactModal/Contact';
 
 const apolloClient = new ApolloClient({
   uri: 'http://localhost:1337/graphql',
@@ -56,7 +56,13 @@ const App = () => {
       <ApolloProvider client={apolloClient}>
         <RouterProvider router={router} />
         {modalState && (
-          <Modal type="contact" isOpen={modalState} onClose={onCloseModal} />
+          <ContactModal modalState={modalState} onCloseModal={onCloseModal} />
+          // <Modal
+          //   type="contact"
+          //   isOpen={modalState}
+          //   onClose={onCloseModal}
+          //   onSubmit={onMessageSubmitHandler}
+          // />
         )}
       </ApolloProvider>
     </div>

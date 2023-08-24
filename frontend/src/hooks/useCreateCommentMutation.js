@@ -1,5 +1,6 @@
 import { useMutation } from '@apollo/client';
 import { CREATE_COMMENT } from '../graphql';
+import { createHandler } from '../graphql/helpers/createHandler';
 
 const useCreateCommentMutation = () => {
   const [
@@ -8,13 +9,7 @@ const useCreateCommentMutation = () => {
   ] = useMutation(CREATE_COMMENT);
 
   const createCommentHandler = async (commentVariables) => {
-    try {
-      await createComment({
-        variables: commentVariables,
-      });
-    } catch (error) {
-      console.error('Error creating comment:', error.message);
-    }
+    await createHandler(createComment, commentVariables);
   };
 
   return { createCommentHandler, loadingMutation, errorMutation, data };

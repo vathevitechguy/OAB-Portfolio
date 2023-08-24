@@ -92,7 +92,6 @@ const Post = () => {
       </div>
       {commentModal && (
         <Modal
-          strapiId={strapiId}
           type="comment"
           isOpen={commentModal}
           onClose={closeCommentModal}

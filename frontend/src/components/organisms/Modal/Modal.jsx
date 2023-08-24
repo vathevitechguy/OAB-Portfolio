@@ -77,7 +77,6 @@ const Modal = (props) => {
 
     if (validateForm()) {
       onSubmit(formData);
-      // if (!loading?.loadingMutation) onClose();
     }
   };
 

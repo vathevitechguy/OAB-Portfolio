@@ -144,3 +144,30 @@ export const CREATE_COMMENT = gql`
     }
   }
 `;
+
+export const SEND_MESSAGE = gql`
+  mutation SendMessage(
+    $fullname: String!
+    $email: String!
+    $message: String!
+    $publishedAt: DateTime
+  ) {
+    createMessage(
+      data: {
+        fullname: $fullname
+        email: $email
+        message: $message
+        publishedAt: $publishedAt
+      }
+    ) {
+      data {
+        attributes {
+          fullname
+          email
+          message
+          publishedAt
+        }
+      }
+    }
+  }
+`;
