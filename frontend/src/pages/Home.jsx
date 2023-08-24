@@ -8,12 +8,13 @@ import {
 } from '../components/organisms';
 import { GET_HOME_DATA } from '../graphql';
 import { useQuery } from '@apollo/client';
+import LoadingSpinner from '../components/molecule/LoadingSpinner/LoadingSpinner';
 export let resumeData;
 
-const Home = () => {
+const Home = (props) => {
   const { loading, error, data } = useQuery(GET_HOME_DATA);
 
-  if (loading) return 'Loading...';
+  if (loading) return <LoadingSpinner />;
   if (error) return `Error! ${error.message}`;
 
   const attributes = data.home.data.attributes;
@@ -21,7 +22,10 @@ const Home = () => {
 
   return (
     <div className="Home">
-      <HeroWithMedia heroDescription={attributes.heroDescription} />
+      <HeroWithMedia
+        heroDescription={attributes.heroDescription}
+        openModal={props.openModal}
+      />
       <div className="intro">
         <p>{attributes.introText}</p>
       </div>

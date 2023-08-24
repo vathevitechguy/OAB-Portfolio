@@ -9,7 +9,8 @@ import { useQuery } from '@apollo/client';
 import { GET_POST_BY_POSTID } from '../graphql';
 import { refactorPosts } from '../graphql/helpers/refactorData';
 import Error from './Error';
-import useCreateCommentMutation from '../graphql/helpers/useCreateCommentMutation';
+import useCreateCommentMutation from '../hooks/useCreateCommentMutation';
+import LoadingSpinner from '../components/molecule/LoadingSpinner/LoadingSpinner';
 
 const Post = () => {
   const { postID } = useParams();
@@ -18,7 +19,8 @@ const Post = () => {
       getPostID: postID,
     },
   });
-  const { createCommentHandler } = useCreateCommentMutation();
+  const { createCommentHandler, loadingMutation, errorMutation } =
+    useCreateCommentMutation();
 
   const navigate = useNavigate();
   const [currentPost, setCurrentPost] = useState([]);
@@ -30,7 +32,7 @@ const Post = () => {
     }
   }, [data, loading, error]);
 
-  if (loading) return 'Loading...';
+  if (loading) return <LoadingSpinner />;
   if (error) return `Error! ${error.message}`;
   if (currentPost.length === 0) return <Error />;
   const { strapiId, title, content, author, imgSrc, date, comments } =
@@ -56,10 +58,9 @@ const Post = () => {
       publishedAt: new Date().toISOString(),
       commentId: generateID,
     };
-    console.log(commentVariables);
     await createCommentHandler(commentVariables);
+    if (!loadingMutation && !errorMutation) closeCommentModal();
     await refetch();
-    closeCommentModal();
   };
 
   // Dynamic background img
@@ -95,6 +96,7 @@ const Post = () => {
           type="comment"
           isOpen={commentModal}
           onClose={closeCommentModal}
+          loading={{ loadingMutation, errorMutation }}
           onSubmit={commentSubmitHandler}
         />
       )}

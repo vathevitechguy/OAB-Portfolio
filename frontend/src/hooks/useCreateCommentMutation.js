@@ -1,25 +1,23 @@
 import { useMutation } from '@apollo/client';
-import { CREATE_COMMENT } from '..';
+import { CREATE_COMMENT } from '../graphql';
 
 const useCreateCommentMutation = () => {
-  const [createComment, { loading, error, data }] = useMutation(CREATE_COMMENT);
+  const [
+    createComment,
+    { loading: loadingMutation, error: errorMutation, data },
+  ] = useMutation(CREATE_COMMENT);
 
   const createCommentHandler = async (commentVariables) => {
     try {
-      const result = await createComment({
+      await createComment({
         variables: commentVariables,
       });
-
-      console.log(
-        'Comment created:',
-        result.data.createComment.data.attributes
-      );
     } catch (error) {
       console.error('Error creating comment:', error.message);
     }
   };
 
-  return { createCommentHandler, loading, error, data };
+  return { createCommentHandler, loadingMutation, errorMutation, data };
 };
 
 export default useCreateCommentMutation;

@@ -4,11 +4,12 @@ import { AboutHeader } from '../components/organisms';
 import SkillBoard from '../components/molecule/SkillBoard/SkillBoard';
 import { useQuery } from '@apollo/client';
 import { GET_ABOUT } from '../graphql';
+import LoadingSpinner from '../components/molecule/LoadingSpinner/LoadingSpinner';
 
 const About = () => {
   const { loading, error, data } = useQuery(GET_ABOUT);
 
-  if (loading) return 'Loading...';
+  if (loading) return <LoadingSpinner />;
   if (error) return `Error! ${error.message}`;
 
   const attributes = data.about.data.attributes;

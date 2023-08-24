@@ -13,7 +13,7 @@ const Comment = (props) => {
   };
 
   return (
-    <div className="Comment">
+    <div className="Comment" id={id}>
       <Avatar initials={initials()} />
       <div className="Comment_data">
         <div className="userName">{userName}</div>

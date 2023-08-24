@@ -1,6 +1,11 @@
 @import '../scss/lib.scss';
 .Blog {
   padding: 79px 115px 0 115px;
+  a {
+    &:hover {
+      opacity: 0.98 !important;
+    }
+  }
   @media (max-width: $bm-xl) {
     padding-left: 50px;
     padding-right: 50px;

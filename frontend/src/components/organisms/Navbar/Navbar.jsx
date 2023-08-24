@@ -17,10 +17,16 @@ const Navbar = () => {
           <NavLink to="/">OAB</NavLink>
         </div>
         <div className={`nav-items ${menuOpen ? 'active' : ''}`}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="personal-blog">Blog</NavLink>
-          <NavLink to="about">About</NavLink>
-          <NavLink to="/#work-cat">
+          <NavLink to="/" onClick={toggleMenu}>
+            Home
+          </NavLink>
+          <NavLink to="personal-blog" onClick={toggleMenu}>
+            Blog
+          </NavLink>
+          <NavLink to="about" onClick={toggleMenu}>
+            About
+          </NavLink>
+          <NavLink to="/#work-cat" onClick={toggleMenu}>
             <DarkBtn title="View Work" />
           </NavLink>
         </div>

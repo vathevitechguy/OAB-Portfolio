@@ -19,7 +19,7 @@ const HeroWithMedia = (props) => {
               {heroDescription} <Link to="about"> Learn more</Link>.
             </p>
             <div className="buttons">
-              <DarkBtn title="Contact Me" />
+              <DarkBtn onClick={props.openModal} title="Contact Me" />
               <div className="socials">
                 <Link to="#">
                   <img src={Linkedin} alt="Linkedin" />

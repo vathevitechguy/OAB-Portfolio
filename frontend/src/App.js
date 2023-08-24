@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import './App.scss';
 
@@ -27,26 +27,34 @@ const App = () => {
   const onCloseModal = () => {
     setModalState(false);
   };
-
-  const mainRoute = (
-    <Route
-      path="/"
-      element={<Root openModal={onOpenModal} />}
-      errorElement={<Error />}
-    >
-      <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
-      <Route path="personal-blog" element={<Blog />} />
-      <Route path="/personal-blog/:postID" element={<Post />} />
-    </Route>
-  );
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Root openModal={onOpenModal} />,
+      errorElement: <Error general={true} />,
+      // loader: ro,
+      children: [
+        {
+          index: true,
+          element: <Home openModal={onOpenModal} />,
+        },
+        { path: 'about', element: <About /> },
+        {
+          path: 'personal-blog',
+          element: <Blog />,
+        },
+        {
+          path: '/personal-blog/:postID',
+          element: <Post />,
+        },
+      ],
+    },
+  ]);
 
   return (
     <div className="App">
       <ApolloProvider client={apolloClient}>
-        <Router>
-          <Routes>{mainRoute}</Routes>
-        </Router>
+        <RouterProvider router={router} />
         {modalState && (
           <Modal type="contact" isOpen={modalState} onClose={onCloseModal} />
         )}

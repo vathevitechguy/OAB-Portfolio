@@ -4,6 +4,7 @@ import { AllPosts, HeroStandard, WeeklyFeature } from '../components/organisms';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../graphql';
 import { refactorPosts } from '../graphql/helpers/refactorData';
+import LoadingSpinner from '../components/molecule/LoadingSpinner/LoadingSpinner';
 
 const Blog = () => {
   const { loading, error, data } = useQuery(GET_POSTS);
@@ -15,7 +16,7 @@ const Blog = () => {
     }
   }, [data, loading, error]);
 
-  if (loading) return 'Loading...';
+  if (loading) return <LoadingSpinner />;
   if (error) return `Error! ${error.message}`;
   const getfeatured = postsData.map((post) => {
     return (

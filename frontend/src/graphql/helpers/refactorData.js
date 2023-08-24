@@ -12,7 +12,6 @@ export const refactorPosts = (data, setState) => {
       comments,
     } = datum.attributes;
 
-    // console.log(datum.attributes.data);
     return {
       id: postID,
       strapiId: datum.id,
