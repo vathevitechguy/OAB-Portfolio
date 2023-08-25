@@ -11,33 +11,39 @@ const MyWork = () => {
       <h4>My Work - 3Ps</h4>
       <div className="MyWork_wrapper">
         <div className="work">
-          <img src={Publications} alt="" />
+          <img src={Publications} alt="Publications" />
           <h5>
-            <Link
+            <a
+              href="https://scholar.google.com/citations?user=gnYqDV8AAAAJ&hl=en"
               target="_blank"
-              to="https://scholar.google.com/citations?user=gnYqDV8AAAAJ&hl=en"
+              rel="noopener noreferrer"
             >
               Publications
-            </Link>
+            </a>
           </h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Explore my academic publications and research.</p>
         </div>
         <div className="work">
-          <img src={Blog} alt="" />
+          <img src={Blog} alt="Personal Blog" />
 
           <h5>
-            {' '}
             <Link to="/personal-blog">Personal Blog</Link>
           </h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Read my thoughts and insights on various topics.</p>
         </div>
         <div className="work">
-          <img src={Github} alt="" />
+          <img src={Github} alt="Projects" />
 
           <h5>
-            <Link to="https://github.com/Dare-Badejo-001">Projects</Link>
+            <a
+              href="https://github.com/Dare-Badejo-001"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Projects
+            </a>
           </h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Explore my coding projects on GitHub.</p>
         </div>
       </div>
     </div>

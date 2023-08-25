@@ -59,6 +59,7 @@ export const GET_POSTS = gql`
             }
           }
           title
+          content
           image {
             data {
               attributes {

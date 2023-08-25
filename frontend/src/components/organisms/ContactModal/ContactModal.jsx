@@ -3,7 +3,7 @@ import useSendMessage from '../../../hooks/useSendMessage';
 import Modal from '../Modal/Modal';
 
 const ContactModal = (props) => {
-  const { modalState, onCloseModal } = props;
+  const { modalState, onCloseModal, notification } = props;
   const { sendMessageHandler, loadingMutation, errorMutation } =
     useSendMessage();
 
@@ -16,7 +16,13 @@ const ContactModal = (props) => {
       publishedAt: new Date().toISOString(),
     };
     await sendMessageHandler(messageVariables);
-    if (!loadingMutation && !errorMutation) onCloseModal();
+    if (!loadingMutation && !errorMutation) {
+      onCloseModal();
+      notification({
+        status: 'success',
+        message: 'Message sent! Check email for confirmation.',
+      });
+    }
   };
 
   return (

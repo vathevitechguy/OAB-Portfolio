@@ -9,13 +9,14 @@ import {
 import { GET_HOME_DATA } from '../graphql';
 import { useQuery } from '@apollo/client';
 import LoadingSpinner from '../components/molecule/LoadingSpinner/LoadingSpinner';
+import Error from './Error';
 export let resumeData;
 
 const Home = (props) => {
   const { loading, error, data } = useQuery(GET_HOME_DATA);
 
   if (loading) return <LoadingSpinner />;
-  if (error) return `Error! ${error.message}`;
+  if (error) return <Error error="Something Went Wrong!" />;
 
   const attributes = data.home.data.attributes;
   resumeData = attributes.resume.data;

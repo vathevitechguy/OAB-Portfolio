@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../graphql';
 import { refactorPosts } from '../graphql/helpers/refactorData';
 import LoadingSpinner from '../components/molecule/LoadingSpinner/LoadingSpinner';
+import Error from './Error';
 
 const Blog = () => {
   const { loading, error, data } = useQuery(GET_POSTS);
@@ -17,7 +18,7 @@ const Blog = () => {
   }, [data, loading, error]);
 
   if (loading) return <LoadingSpinner />;
-  if (error) return `Error! ${error.message}`;
+  if (error) return <Error error="Something Went Wrong!" />;
   const getfeatured = postsData.map((post) => {
     return (
       post.featured === true && (
@@ -25,6 +26,7 @@ const Blog = () => {
           key={post.id}
           postID={post.id}
           title={post.title}
+          content={post.content}
           date={post.date}
           imgSrc={post.imgSrc}
         />

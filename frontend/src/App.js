@@ -11,6 +11,7 @@ import Blog from './pages/Blog';
 import Post from './pages/Post';
 
 import ContactModal from './components/organisms/ContactModal/ContactModal';
+import Notification from './components/molecule/Notification/Notification';
 
 const apolloClient = new ApolloClient({
   uri: 'http://localhost:1337/graphql',
@@ -19,6 +20,7 @@ const apolloClient = new ApolloClient({
 
 const App = () => {
   const [modalState, setModalState] = useState(false);
+  const [notification, setNotification] = useState(false);
 
   const onOpenModal = () => {
     setModalState(true);
@@ -55,14 +57,20 @@ const App = () => {
     <div className="App">
       <ApolloProvider client={apolloClient}>
         <RouterProvider router={router} />
+        {notification && (
+          <Notification
+            message={notification.message}
+            onClose={() => setNotification(false)}
+          />
+        )}
         {modalState && (
-          <ContactModal modalState={modalState} onCloseModal={onCloseModal} />
-          // <Modal
-          //   type="contact"
-          //   isOpen={modalState}
-          //   onClose={onCloseModal}
-          //   onSubmit={onMessageSubmitHandler}
-          // />
+          <ContactModal
+            modalState={modalState}
+            onCloseModal={onCloseModal}
+            notification={({ status, message }) =>
+              setNotification({ status: status, message: message })
+            }
+          />
         )}
       </ApolloProvider>
     </div>

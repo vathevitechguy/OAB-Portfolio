@@ -5,12 +5,13 @@ import SkillBoard from '../components/molecule/SkillBoard/SkillBoard';
 import { useQuery } from '@apollo/client';
 import { GET_ABOUT } from '../graphql';
 import LoadingSpinner from '../components/molecule/LoadingSpinner/LoadingSpinner';
+import Error from './Error';
 
 const About = () => {
   const { loading, error, data } = useQuery(GET_ABOUT);
 
   if (loading) return <LoadingSpinner />;
-  if (error) return `Error! ${error.message}`;
+  if (error) return <Error error="Something Went Wrong!" />;
 
   const attributes = data.about.data.attributes;
 
