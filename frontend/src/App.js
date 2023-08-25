@@ -10,7 +10,7 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import Post from './pages/Post';
 
-import ContactModal from './components/organisms/ContactModal/Contact';
+import ContactModal from './components/organisms/ContactModal/ContactModal';
 
 const apolloClient = new ApolloClient({
   uri: 'http://localhost:1337/graphql',
