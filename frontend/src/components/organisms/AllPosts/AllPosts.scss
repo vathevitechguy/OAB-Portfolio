@@ -12,10 +12,10 @@
     }
     .postCards {
       display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      gap: 30px;
+      flex-wrap: wrap;
       margin-bottom: 60px;
+      gap: 30px;
+      // justify-content: space-between;
     }
     .error-message {
       margin: 150px 0 150px;

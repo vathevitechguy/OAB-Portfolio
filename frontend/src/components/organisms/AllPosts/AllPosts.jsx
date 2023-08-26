@@ -7,7 +7,7 @@ import LoadingSpinner from '../../molecule/LoadingSpinner/LoadingSpinner';
 
 const AllPosts = (props) => {
   const { data } = props;
-  const [visiblePosts, setVisiblePosts] = useState(3);
+  const [visiblePosts, setVisiblePosts] = useState(6);
   const [loadingMore, setLoadingMore] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
