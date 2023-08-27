@@ -12,7 +12,7 @@ const AdobeInline = (props) => {
         {
           content: {
             location: {
-              url: `${data.url}`,
+              url: data.url,
             },
           },
           metaData: { fileName: `${data.name}`, id: `${data.hash}` },
@@ -23,7 +23,8 @@ const AdobeInline = (props) => {
       );
     });
   }, [data.hash, data.name, data.url, mode]);
-
+  console.log(data.url);
+  console.log(data.name);
   return <div id="pdf-div" className="in-line-div" />;
 };
 //
