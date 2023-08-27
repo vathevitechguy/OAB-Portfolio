@@ -12,7 +12,7 @@ const AdobeInline = (props) => {
         {
           content: {
             location: {
-              url: `http://localhost:1337${data.url}`,
+              url: `${data.url}`,
             },
           },
           metaData: { fileName: `${data.name}`, id: `${data.hash}` },

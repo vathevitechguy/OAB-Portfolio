@@ -6,7 +6,7 @@ const AboutHeader = (props) => {
   return (
     <div className="AboutHeader">
       <div className="AboutHeader_img">
-        <img src={`http://localhost:1337${imgSrc}`} alt="Oluwadare Badejo" />
+        <img src={`${imgSrc}`} alt="Oluwadare Badejo" />
       </div>
       <div className="AboutHeader_desc">
         <h3>Hi there!</h3>
