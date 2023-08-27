@@ -18,7 +18,7 @@ const Resume = (props) => {
           {
             content: {
               location: {
-                url: `http://localhost:1337${data.url}`,
+                url: `${data.url}`,
               },
             },
             metaData: { fileName: `${data.name}`, id: `${data.hash}` },
@@ -45,7 +45,7 @@ const Resume = (props) => {
         </div>
       </div>
       <div className="icons">
-        <Link target="_blank" download={`http://localhost:1337${data.url}`}>
+        <Link target="_blank" download={`${data.url}`}>
           <img src={DownloadIcon} alt="download Resume" />
         </Link>
         <img
