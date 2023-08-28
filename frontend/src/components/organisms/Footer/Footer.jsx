@@ -30,7 +30,7 @@ const Footer = (props) => {
           </div>
           <div className="Footer_main--copyright">
             <span>
-              Copyright © 2023. OAB. Designed & Developed by{' '}
+              Copyright © 2023. OAB. Made with ❤️ by{' '}
               <Link target="_blank" to="https://github.com/vathevitechguy">
                 vathevitechguy
               </Link>

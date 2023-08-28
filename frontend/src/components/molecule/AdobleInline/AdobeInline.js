@@ -23,8 +23,7 @@ const AdobeInline = (props) => {
       );
     });
   }, [data.hash, data.name, data.url, mode]);
-  console.log(data.url);
-  console.log(data.name);
+
   return <div id="pdf-div" className="in-line-div" />;
 };
 //

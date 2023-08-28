@@ -20,7 +20,7 @@ class useAdobeSDK {
   previewFile(divId, pdfContentData, viewerConfig) {
     const config = {
       /* Pass your registered client id */
-      clientId: 'e0b9aa89aa854ad18b6054f8fa270ebf',
+      clientId: '8c0cd670273d451cbc9b351b11d22318',
     };
     if (divId) {
       /* Optional only for Light Box embed mode */
@@ -71,7 +71,7 @@ class useAdobeSDK {
     /* Initialize the AdobeDC View object */
     this.adobeDCView = new window.AdobeDC.View({
       /* Pass your registered client id */
-      clientId: 'e0b9aa89aa854ad18b6054f8fa270ebf',
+      clientId: '8c0cd670273d451cbc9b351b11d22318',
       /* Pass the div id in which PDF should be rendered */
       divId,
     });
