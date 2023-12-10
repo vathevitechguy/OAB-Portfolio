@@ -25,7 +25,7 @@ const HeroWithMedia = (props) => {
                   <img src={Linkedin} alt="Linkedin" />
                 </Link>
                 <Link to="#">
-                  <img src={Email} alt="Email" />
+                  <img src={Email} className="email" alt="Email" />
                 </Link>
               </div>
             </div>

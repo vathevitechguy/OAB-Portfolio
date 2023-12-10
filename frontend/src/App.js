@@ -14,7 +14,7 @@ import ContactModal from './components/organisms/ContactModal/ContactModal';
 import Notification from './components/molecule/Notification/Notification';
 
 const apolloClient = new ApolloClient({
-  uri: 'https://oab-app.onrender.com/graphql',
+  uri: 'http://localhost:1337/graphql',
   cache: new InMemoryCache(),
 });
 

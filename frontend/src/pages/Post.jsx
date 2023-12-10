@@ -11,6 +11,8 @@ import { refactorPosts } from '../graphql/helpers/refactorData';
 import Error from './Error';
 import useCreateCommentMutation from '../hooks/useCreateCommentMutation';
 import LoadingSpinner from '../components/molecule/LoadingSpinner/LoadingSpinner';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 const Post = () => {
   const { postID } = useParams();
@@ -58,6 +60,7 @@ const Post = () => {
       publishedAt: new Date().toISOString(),
       commentId: generateID,
     };
+
     await createCommentHandler(commentVariables);
     if (!loadingMutation && !errorMutation) closeCommentModal();
     await refetch();
@@ -65,7 +68,7 @@ const Post = () => {
 
   // Dynamic background img
   const headerStyle = {
-    background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url('${imgSrc}'), lightgray 50% / cover no-repeat`,
+    background: `linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url('http://localhost:1337${imgSrc}'), lightgray 50% / cover no-repeat`,
   };
 
   return (
@@ -86,7 +89,9 @@ const Post = () => {
           </div>
         </div>
         <div className="Post_content">
-          <p>{content}</p>
+          <p>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+          </p>
         </div>
         <Comments data={comments} openComModal={commentModalHandler} />
       </div>

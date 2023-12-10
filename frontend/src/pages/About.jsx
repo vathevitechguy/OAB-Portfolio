@@ -6,6 +6,8 @@ import { useQuery } from '@apollo/client';
 import { GET_ABOUT } from '../graphql';
 import LoadingSpinner from '../components/molecule/LoadingSpinner/LoadingSpinner';
 import Error from './Error';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 const About = () => {
   const { loading, error, data } = useQuery(GET_ABOUT);
@@ -23,7 +25,11 @@ const About = () => {
       />
       <div className="About_content">
         <h4>My Journey</h4>
-        <p>{attributes.biography}</p>
+        <p>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+            {attributes.biography}
+          </ReactMarkdown>
+        </p>
         {/* <ReactMarkdown>{attributes.biography}</ReactMarkdown> */}
       </div>
       <div className="About_skillboard">

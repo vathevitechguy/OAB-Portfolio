@@ -18,7 +18,7 @@ const Resume = (props) => {
           {
             content: {
               location: {
-                url: `${data.url}`,
+                url: `http://localhost:1337${data.url}`,
               },
             },
             metaData: { fileName: `${data.name}`, id: `${data.hash}` },

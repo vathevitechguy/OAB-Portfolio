@@ -28,6 +28,7 @@
         text-decoration: underline;
         color: $text-dark;
       }
+
       .buttons {
         display: flex;
         justify-content: flex-start;
@@ -37,6 +38,9 @@
           width: 70px;
           height: 70px;
           transform: translateY(5px);
+        }
+        .email {
+          margin-left: -17px;
         }
       }
     }

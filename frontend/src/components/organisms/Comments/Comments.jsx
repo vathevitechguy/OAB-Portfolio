@@ -23,7 +23,8 @@ const Comments = (props) => {
       <div className="Comments">
         {allComments}
         <Link className="submitComment" to={null} onClick={openComModal}>
-          Have a thought? Leave a comment now!
+          Have a thought?{' '}
+          <span className="Comments_highlight">Leave a comment now!</span>
         </Link>
       </div>
     </>
